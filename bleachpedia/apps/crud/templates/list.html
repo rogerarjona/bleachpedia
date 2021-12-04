@@ -11,6 +11,7 @@
       <th scope="col">Last Name</th>
       <th scope="col">Shikai</th>
       <th scope="col">Bankai</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -20,10 +21,17 @@
           <td>{{ shinigami.last_name }}</td>
           <td>{{ shinigami.shikai }}</td>
           <td>{{ shinigami.bankai }}</td>
+          <td>
+              <div>
+                  <a type="button" class="btn btn-primary">Editar</a>
+                  <a type="button" class="btn btn-danger">Eliminar</a>
+              </div>
+          </td>
         </tr>
     {% empty %}
         <tr>
           <th scope="row"></th>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
