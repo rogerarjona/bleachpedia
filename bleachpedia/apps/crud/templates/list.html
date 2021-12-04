@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load i18n %}
+
+{% block header_title %}Lista de Shinigamis{% endblock %}
+{% block container %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Shikai</th>
+      <th scope="col">Bankai</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for shinigami in response %}
+        <tr>
+          <th scope="row">{{ shinigami.first_name }}</th>
+          <td>{{ shinigami.last_name }}</td>
+          <td>{{ shinigami.shikai }}</td>
+          <td>{{ shinigami.bankai }}</td>
+        </tr>
+    {% empty %}
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock container %}
